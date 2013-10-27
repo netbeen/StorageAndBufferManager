@@ -10,4 +10,3 @@ private:
 	void init();
 	int availableNodeCount;
 };
-

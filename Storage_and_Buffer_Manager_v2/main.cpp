@@ -5,10 +5,15 @@
 #include "FullLRU.h"
 #include "Hash_P2F.h"
 
-
 using namespace std;
 
+/*************************************************
+Author: Yang Yang
+Date&Time: 2013-10-27 23:38
+Version: 2.1
+*************************************************/
 int main(){
+	cout << "=================Storage and Buffer Manager=================" << endl;
 	Console console = Console();
 	Disk disk = Disk();
 	EmptyLRU emptyLRU = EmptyLRU();
@@ -18,7 +23,7 @@ int main(){
 	int hitCount = 0;
 	int IOCount = 0;
 
-	cout << "===============Now Start Simulating===============" << endl;
+	cout << "====================Now Start Simulating====================" << endl;
 	clock_t startTime = clock();
 
 	for (int requestIndex = 0; requestIndex < TESTCOUNT; requestIndex ++){		
@@ -68,16 +73,10 @@ int main(){
 	}
 	//write the changed data back to the disk before exit.
 	disk.outputProcess(0);
-	/*for(LRUElement * ergodic = fullLRU.returnTheOneAfterHead(); ergodic ->isTrail != true; ergodic = ergodic ->moreRecent){
-		if (hash_p2f.wasWritten(ergodic ->pageID) == true){
-			disk.outputProcess(ergodic ->pageID);
-		};
-	}*/
 	clock_t endTime = clock();
-	cout << "Running time is: " << static_cast<double>(endTime - startTime)/CLOCKS_PER_SEC*1000 << " ms." << endl;
-	
-	cout << "IO count: " << IOCount << "\tHit rate: " << setprecision(4) <<(static_cast<float>(hitCount)/TESTCOUNT) * 100 <<"%" <<endl;
-	
-	getchar();
+	cout << "#   Buffer Size: " << BUFFERSIZE  << "\t\tHit Rate: " << setprecision(4) <<(static_cast<float>(hitCount)/TESTCOUNT) * 100 <<"%\t   #" <<endl;
+	cout << "#   I/O Count: " << IOCount << "\t\tRunning Time: "<< setprecision(0) << fixed << static_cast<double>(endTime - startTime)/CLOCKS_PER_SEC*1000 << " ms.\t   #" << endl;
+	cout << "============================================================" << endl;
+	system("pause");
 	return 0;
 }

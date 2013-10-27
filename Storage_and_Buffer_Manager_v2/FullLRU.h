@@ -7,5 +7,4 @@ public:
 	void adjustLRU(const int);
 private:
 	void init();
-	
 };

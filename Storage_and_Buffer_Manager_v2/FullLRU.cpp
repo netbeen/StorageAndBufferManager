@@ -9,9 +9,10 @@ FullLRU::FullLRU(){
 void FullLRU::init(){
 	initHeadAndTrail();
 
-	cout << "Full LRU link list initialize cpmpeted." << endl;
+	cout << "#   (4/5) Full LRU link list initialize cpmpeted.          #" << endl;
 }
 
+//Search the specific node in LRU link list with the pageID, and adjust it into the trail.
 void FullLRU::adjustLRU(const int pageID){
 	current = &trail;
 	while(current ->lessRecent ->isHead == false){

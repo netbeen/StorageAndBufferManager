@@ -16,6 +16,7 @@ private:
 	void init();
 	char * frame;
 	ifstream input;
+	ifstream index;
+	ifstream pageTable;
 	ofstream output;
 };
-

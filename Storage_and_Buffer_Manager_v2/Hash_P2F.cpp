@@ -22,9 +22,10 @@ void Hash_P2F::init(){
 
 		hashTable[i] = newHead;
 	}
-	cout << "Hash table, for page to frame, initialize competed." << endl;
+	cout << "#   (5/5) Hash table of page to frame initialize competed. #" << endl;
 }
 
+//Return whether the specific page with the pageID exist in the buffer.
 bool Hash_P2F::findPage(const int pageID){
 	int hashResult = hash(pageID);
 	searchPtr = hashTable[hashResult];
@@ -36,6 +37,7 @@ bool Hash_P2F::findPage(const int pageID){
 	return false;
 }
 
+//Calculate the hash.
 int Hash_P2F::hash(const int pageID) const{
 	return (pageID % BUFFERSIZE);
 }
@@ -55,6 +57,7 @@ void Hash_P2F::insertBCB(const int frameID, const int pageID, const bool isWrite
 	hashTable[hashResult] ->next = inserting;
 }
 
+//Find where the node with the pageID is.
 BCB * Hash_P2F::locateNode(const int pageID){
 	int hashResult = hash(pageID);
 	BCB * searchPtr = hashTable[hashResult];
@@ -64,21 +67,10 @@ BCB * Hash_P2F::locateNode(const int pageID){
 			return searchPtr;
 		}
 	}
-	exit(2);
 }
 
+//Cut the two pointer of the node.
 void Hash_P2F::dropBCB(BCB * const victim){
 	victim ->previous ->next = victim ->next;
 	victim ->next ->previous = victim ->previous;
-}
-
-bool Hash_P2F::wasWritten(const int pageID){
-	int hashResult = hash(pageID);
-	searchPtr = hashTable[hashResult];
-	while(searchPtr ->next ->isTrail != true){
-		searchPtr = searchPtr ->next;
-		if (searchPtr ->pageID == pageID)
-			return (searchPtr ->isWrite);
-	}
-	exit(3);
 }

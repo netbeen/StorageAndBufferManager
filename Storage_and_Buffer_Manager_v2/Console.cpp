@@ -2,10 +2,12 @@
 
 using namespace std;
 
+//Construct function.
 Console::Console(){
 	init();
 }
 
+//Preread the data requests into memory.
 void Console::init(){
 	ifstream inFile("data-5w-50w-zipf.txt");
 	string tmp,tmpPre,tmpSuf;
@@ -22,5 +24,5 @@ void Console::init(){
 		arrayOfDataRequest[dataRequestIndex].pageID = atoi(tmpSuf.c_str());
 		dataRequestIndex ++;
 	}
-	cout << "Console initialization competed." << endl;
+	cout << "#   (1/5) Console initialization competed.                 #" << endl;
 }

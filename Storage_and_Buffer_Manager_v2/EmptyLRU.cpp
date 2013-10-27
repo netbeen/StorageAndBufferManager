@@ -9,7 +9,6 @@ EmptyLRU::EmptyLRU(){
 
 //Initialize the LRU link list.
 void EmptyLRU::init(){
-	
 	initHeadAndTrail();
 	
 	for(int i = 0; i < BUFFERSIZE; i++){
@@ -22,7 +21,7 @@ void EmptyLRU::init(){
 
 	availableNodeCount = BUFFERSIZE;
 
-	cout << "Empty LRU link list initialize cpmpeted." << endl;
+	cout << "#   (3/5) Empty LRU link list initialize cpmpeted.         #" << endl;
 }
 
 int EmptyLRU::getAvailableNodeCount() const{

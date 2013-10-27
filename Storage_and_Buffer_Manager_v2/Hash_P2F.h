@@ -19,7 +19,6 @@ public:
 	bool findPage(const int);
 	void insertBCB(const int frameID, const int pageID, const bool isWrite);
 	BCB * locateNode(const int pageID);
-	bool wasWritten(const int pageID);
 private:
 	int hash(const int) const;
 	void init();

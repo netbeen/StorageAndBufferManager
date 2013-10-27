@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include "Console.h"
 
@@ -19,7 +20,6 @@ public:
 	void insertNodeOnTrail(LRUElement * const);
 	void dropNode(LRUElement * const);
 protected:
-	
 	void initHeadAndTrail();
 	LRUElement head;
 	LRUElement trail;
