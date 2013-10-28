@@ -9,8 +9,8 @@ using namespace std;
 
 /*************************************************
 Author: Yang Yang
-Date&Time: 2013-10-27 23:38
-Version: 2.1
+Date&Time: 2013-10-28 15:29
+Version: 2.2
 *************************************************/
 int main(){
 	cout << "=================Storage and Buffer Manager=================" << endl;
