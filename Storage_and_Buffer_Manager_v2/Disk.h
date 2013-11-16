@@ -5,10 +5,8 @@
 
 using namespace std;
 
-const int MAXPAGES = 50000;
+const int MAXPAGES = 60000;
 const int PAGESIZE = 4096;
-const int NTFSINDEXPAGESIZE = 512;
-const int NTFSPAGETABLESIZE = 4096;
 
 class Disk{
 public:
@@ -23,8 +21,6 @@ private:
 	void init();
 	char * frame;
 	ifstream input;
-	ifstream index;
-	ifstream pageTable;
 	ofstream output;
 	ofstream log;
 };

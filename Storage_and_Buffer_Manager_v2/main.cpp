@@ -58,7 +58,7 @@ int main(){
 				//Update the Hash Table.
 				BCB * victim = hash_p2f.locateNode(victimPageID);
 				if(victim ->isWrite == true){
-					disk.outputProcess(pageID);
+					disk.outputProcess(victimPageID);
 				}
 				int frameID = victim ->frameID;
 				hash_p2f.dropBCB(victim);
