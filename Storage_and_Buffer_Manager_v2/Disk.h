@@ -5,7 +5,7 @@
 
 using namespace std;
 
-const int MAXPAGES = 60000;
+const int MAXPAGES = 50100;
 const int PAGESIZE = 4096;
 
 class Disk{
